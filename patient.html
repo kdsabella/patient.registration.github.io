@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="patient.css">
+    <script defer src="patient.js"></script>
+</head>
+
+<body>
+    <form action="/" id="form">
+        <section class="header">
+            <h1>Patient Form</h1>
+            <span></span>
+        </section>
+
+        <!-- PERSON INFO -->
+        <section class="person-info">
+            <div class="person-info-flex">
+                <div class="input-control">
+                    <div>
+                        <label for="name">First Name <span>*</span></label>
+                    </div>
+                    <div>
+                        <input type="text" id="fname" name="fname" class="person-input" placeholder="First Name">
+                        <div class="error"></div>
+                    </div>
+                </div>
+                <div class="input-control">
+                    <div>
+                        <label for="">Middle Name</label>
+                    </div>
+                    <div>
+                        <input type="text" id="mname" name="mname" class="person-input" placeholder="Middle Name">
+                        <div class="error"></div>
+                    </div>
+                </div>
+
+                <div class="input-control">
+                    <div>
+                        <label for="">Last Name<span>*</span></label>
+                    </div>
+                    <div>
+                        <input type="text" id="lname" name="lname" class="person-input" placeholder="Last Name">
+                        <div class="error"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Address -->
+            <div class="person-address">
+                <div>
+                    <label for="">Address<span>*</span></label>
+                </div>
+                <div>
+                    <input type="text" id="address" class="address" placeholder="Complete Address">
+                    <div class="error"></div>
+                </div>
+            </div>
+
+            <!-- ADDITIONAL INFO -->
+            <div class="additional-info-flex">
+                <div class="error-message">
+                    <div>
+                        <label for="">Birthdate<span>*</span></label>
+                    </div>
+                    <div>
+                        <input type="date" id="dob">
+                    </div>
+                    <span id="dobErrMsg"></span>
+                </div>
+
+                <div class="error-message">
+                    <label for="">Contact number<span>*</span></label>
+                    <input type="tel" id="contact">
+                    <div class="error"></div>
+                </div>
+
+                <div>
+                    <h4>Gender<span>*</span></h4>
+
+                    <ul id="gender1">
+                        <li>
+                            <input type="radio" id="male" value="Male" name="gender">
+                            <label for="">Male</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="female" value="Female" name="gender">
+                            <label for="">Female</label>
+                        </li>
+                    </ul>
+                    <div class="gender">
+                        <p id="message"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="person-records">
+            <div>
+                <h4>Medical History</h4>
+                <ul>
+                    <li>
+                        <input type="checkbox" name="med-history" value="Asthma">
+                        <label for="">Asthma</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="med-history" value="Cancer">
+                        <label for="">Cancer</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="med-history" value="Cardiac Disease">
+                        <label for="">Cardiac Disease</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="med-history" value="Diabetes">
+                        <label for="">Diabetes</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="med-history" value="Hypertension">
+                        <label for="">Hypertension</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="med-history" value="Psychiatric Disorder">
+                        <label for="">Psychiatric Disorder</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="med-history" value="Epilepsy">
+                        <label for="">Epilepsy</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="med-history" value="Others">
+                        <label for="">Others</label>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div>
+                <h4>Current Symptoms</h4>
+
+                <select id="symptoms" name="symptoms" multiple>
+                    <option value="Chestpain">Chestpain</option>
+                    <option value="Respiratory">Respiratory</option>
+                    <option value="Neurological">Neurological</option>
+                    <option value="Lymphatic">Lymphatic</option>
+                    <option value="Covid">Covid</option>
+                    <option value="Hematological">Hematological</option>
+                </select>
+            </div>
+            <div>
+                <h4>Are you taking medication ?</h4>
+                <input type="radio" name="chk">
+                <label for=" ">Yes</label>
+                <input type="radio " name="chk ">
+                <label for=" ">No</label>
+                <input type="text " id="medication " disabled>
+                <div class="med">
+                    <p id="message1 "></p>
+                </div>
+            </div>
+
+        </section>
+
+
+        <section class="button ">
+            <button type="submit ">Submit</button>
+        </section>
+
+    </form>
+    <div class="btn">
+
+
+        <button class="btn-out" onclick="history.back()">Log out</button>
+
+    </div>
+</body>
+
+</html>
