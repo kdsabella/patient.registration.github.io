@@ -15,6 +15,10 @@ form.addEventListener('submit', e => {
 });
 
 
+
+
+
+
 const setError = (element, message) => {
     const inputControl = element.parentElement;
     const errorDisplay = inputControl.querySelector('.error');
@@ -40,10 +44,10 @@ const validateInputs = () => {
     const addressValue = address.value.trim();
     const contactValue = contact.value.trim();
     const genders = document.getElementsByName('gender');
+
     let selectedBtn;
 
-
-    // Validation for BDATE
+    // validation for bdate
     var userBirthDate = new Date();
     var todayYear = (new Date()).getFullYear(); // Always use FullYear!!
     var cutOff19 = new Date(); // should be a Date
@@ -58,8 +62,7 @@ const validateInputs = () => {
         dobErrMsg.innerHTML = "";
     }
 
-
-    // Validation for Gender
+    // validation for gender
     for (const gender of genders) {
         if (gender.checked) {
             selectedBtn = gender.value;
@@ -69,7 +72,7 @@ const validateInputs = () => {
         document.getElementById('message').innerHTML = 'Select gender'
     }
 
-    // Validation for person info
+    // validation for persong info
     if (fnameValue === '') {
         setError(fName, 'First Name is required');
     }
@@ -86,7 +89,7 @@ const validateInputs = () => {
         setError(contact, 'Phone number is require');
     }
 
-    // Validation for med history
+    // validation for med-history
     let checkboxes = document.querySelectorAll(`input[name="med-history"]`);
     let chkBox = [];
 
@@ -97,23 +100,21 @@ const validateInputs = () => {
     }
 
 
-    // Validation for current symptoms
+    // validaiton for symptoms
     let symptoms = document.querySelector('#symptoms');
     let selectedValues = [...symptoms.options]
         .filter(option => option.selected)
         .map(option => option.text);
 
+    let questions = document.getElementsByName('chk');
 
-
-    // const questions = document.getElementsByName('chk');
-
-    // if (questions[0].checked == false && questions[1].checked == false) {
-    //     document.getElementById('message1').innerHTML = 'Select '
-    // }
+    if (questions[0].checked == false && questions[1].checked == false) {
+        document.getElementById('message1').innerHTML = 'Select gender'
+    }
 
 
     const result = `Patient Information \n First Name : ${fnameValue} \n Middle Name : ${mnameValue} \n Last Name : ${lnameValue} \n Address : ${addressValue} \n Birthday : ${userBirthDate} \n Contact : ${contactValue}\n Gender : ${selectedBtn}\n Medical History : ${chkBox} \n Current Symptoms : ${selectedValues} `
     alert(result)
 
-
+    // alert(chkBox)
 }
